@@ -53,10 +53,12 @@ app.use((req,res,next)=> {
     next();
     })
     
+    
 //Routes
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
-app.use(express.static('public'))
+
+
 
 
 
