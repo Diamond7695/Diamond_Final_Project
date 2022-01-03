@@ -1,0 +1,114 @@
+<h1><%- include ('./partials/messages') %></h1>
+<form action="/users/register" method="POST">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+       <link rel="stylesheet" href="styles.css">         
+    <title>Party Time!</title>
+    </head>
+    <body>
+        <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            
+            <a class="Register" href="/users/login"> Login</a>
+            
+            <a class="Register" href="/users/register"> SignUp</a>
+          </div>
+        </div>
+      </nav>
+      <!--END OF NAV BAR-->
+        <div class="signup-form">
+           <form action="/users/register" method="POST"></form>
+            
+            
+                <h2>Please SignUp</h2>
+                <p>Let's get this party Started!</p>
+                
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="name"
+                        name="name"
+                        placeholder="Enter Name"
+                        value="<%= typeof name != 'undefined' ? name : '' %>"
+                      />
+                        
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                        <input 
+                        type="email"
+                        name="email"
+                        placeholder="Enter Email"
+                        value="<%= typeof email != 'undefined' ? email : '' %>"
+                      />
+                        
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password"
+                        name="password"
+                        placeholder="Create Password"
+                        value="<%= typeof password != 'undefined' ? password : '' %>"
+                      />
+                        
+                        
+                            </input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-lock"></i>
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <input type="password"
+                        name="password2"
+                        placeholder="Confirm Password"
+                        value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+                        />
+                        
+                            </input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                </div>
+            </form>
+           
+        </div>
+        </body>
+        
+                    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+
+<p >Have An Account? <a href="/users/login">Login</a></p>
+<link rel="stylesheet" href="views/styles.css">
