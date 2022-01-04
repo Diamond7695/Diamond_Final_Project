@@ -8,6 +8,15 @@ const expressEjsLayout = require('express-ejs-layouts')
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require("passport");
+const cors = require('cors')
+
+
+
+
+
+
+
+
 
 
 
@@ -35,6 +44,9 @@ mongoose.connect('mongodb+srv://DiamondToliver2:DiamondTolivers@cluster0.n0skj.m
 app.set('views', './views');
 app.set('view engine','ejs');
 app.use(expressEjsLayout);
+//Json+ Cors
+app.use(cors())
+app.use(express.json())
 //BodyParser
 app.use(express.urlencoded({extended : false}));
 //express session
@@ -55,8 +67,15 @@ app.use((req,res,next)=> {
     
     
 //Routes
+//connect controller with this file
+
+const ctrl = require('./controller.js')
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
+app.get('/api/music', ctrl.getMusic)
+app.delete('/api/music/:id', ctrl.deleteSongs)
+
+
 
 
 
